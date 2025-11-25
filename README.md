@@ -58,8 +58,38 @@ python3 --version
 ```
 pip install --upgrade pip
 ```
+## 4. Kiểm tra pip đang trỏ vào môi trường ảo
+- Lệnh xem đường dẫn thực thi của pip:
+```
+which pip
+```
+Kết quả nên nằm trong thư mục môi trường ảo, ví dụ `/path/to/myenv/bin/pip`
 
----
+- Lệnh xem đường dẫn thực thi của python:
+```
+which python
+```
+Kết quả cũng nên nằm trong thư mục môi trường ảo, ví dụ `/path/to/myenv/bin/python`
+
+## 5. Hiển thị phiên bản pip hiện hành để xác nhận pip trong môi trường ảo
+```
+pip --version
+```
+Kết quả sẽ hiển thị đường dẫn của pip kèm theo version, ví dụ:
+pip 23.0.1 from /path/to/myenv/lib/python3.x/site-packages/pip (python 3.x)
+
+## 6. Hiển thị danh sách các gói đã cài trong môi trường ảo
+```
+pip list
+```
+Chỉ hiện các gói được cài trong môi trường ảo hiện tại. Các gói hệ thống sẽ không hiển thị.
+
+## 7. Lưu ý thêm
+
+- Khi môi trường ảo chưa được kích hoạt, pip sẽ trỏ đến pip của hệ thống, bạn có thể xác định bằng `which pip` không nằm trong thư mục môi trường ảo.
+- Luôn kiểm tra bằng lệnh `which pip` và `which python` để đảm bảo bạn đang thao tác đúng với môi trường ảo.
+- Cài đặt gói sau khi kích hoạt môi trường để gói đó nằm trong môi trường ảo, không ảnh hưởng đến hệ thống toàn cục.
+
 
 *Lưu ý:* Trên macOS, sử dụng `python3` để đảm bảo gọi đúng phiên bản Python 3 vì Python 2 có thể vẫn tồn tại trên hệ thống.
 
